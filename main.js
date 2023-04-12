@@ -13,9 +13,41 @@ const rl = readline.createInterface({
 
 const pigLatin = (word) => {
 
-  // Your code here
+word= word.toLowerCase().trim()
+let firstLetter= word[0]
+let vowels= ["a", "e", "i", "o", "u"]
+let firstVowel;
+
+if(vowels.includes(firstLetter) == true)
+{
+return word + "yay"
+}
+else
+{
+for (let index = 0; index < word.length; index++) {
+ //check each letter to see how many consonatns there are in a row
+ //
+ if(vowels.includes(word[index])){
+  firstVowel = index;
+  break;
+ }
+}
+// tree  eetray
+// tree.substring(2)+ tree.substring(0,2) + "ay"
+
+// const str = 'Mozilla';
+
+// console.log(str.substring(1, 3));
+// // Expected output: "oz"
+
+// console.log(str.substring(2));
+
+let finalAnswer= word.substring(firstVowel)+ word.substring(0, firstVowel) + "ay"
+return finalAnswer
 
 }
+}
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
